@@ -5,6 +5,7 @@ import Menu from './Components/menu';
 import ActivityBar from './Components/activity_bar';
 import LeaderBoard from './Components/leaderboard';
 import Leaderboards from './Components/Leaderboards/leaderboards';
+import PopularSongs from './Components/Leaderboards/popular_songs';
 
 function App() {
   return (
