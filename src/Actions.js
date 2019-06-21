@@ -1,5 +1,18 @@
 var $ = require('jquery');
 
+
+export function mostRepeatedTracks(callback) {
+    var url = "https://shipitback20190620080140.azurewebsites.net/api/values";
+
+    $.ajax({
+        method: 'Get',
+        url: url,
+    }).done(data => {
+
+        callback(data)
+    });
+}
+
 export function pullTracks (callback, user) {
     if (!user) {
       callback({error: true, message: 'Enter a user', hideDisplay: true});

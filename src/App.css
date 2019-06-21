@@ -47,23 +47,23 @@ a, a:hover {
 }
 
 li {
-	display: inline-block;
+	/* display: inline-block; */
 	position: relative;
 	padding-bottom: 3px;
   margin-right: 40px;
-  color: #033B5C;
+  /* color: #033B5C; */
 }
 
 li:last-child {
-  width: 50px;
-  margin-right: 20px;
+  /* width: 50px;   */
+  /* margin-right: 20px; */
 }
 
 li:after {
 	content: '';
 	display: block;
 	height: 3px;
-	width: 0px;
+	/* width: 0px; */
 	background: transparent;
 	transition: width .5s ease, background-color .5s ease, margin-right .5s ease;
 }
@@ -71,7 +71,7 @@ li:after {
 li:hover:after {
 	width: 100%;
 	background: lightgray;
-  margin-right: 70px;
+  /* margin-right: 70px; */
 }
 
 .floatright {

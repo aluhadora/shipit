@@ -19,7 +19,7 @@ class Menu extends Component {
             
             <ul>
                 <MenuItem text="Challenges" active={false} />
-                <MenuItem text="Leaderboards" active={false} />
+                <MenuItem text="Leaderboards" active={true} />
                 <MenuItem text="History" active={false} />
             </ul>
         </div>
