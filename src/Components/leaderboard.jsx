@@ -28,7 +28,7 @@ class LeaderBoard extends Component {
 
 
         return (<div style={{marginTop: 50}}>
-                <b>Most Repeated Songs</b>
+                <b>Songs most played by a user </b>
                 {trackControls}
         </div>);
     }
