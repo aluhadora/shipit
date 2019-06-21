@@ -31,3 +31,72 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+.Track {
+  display: table;
+  padding-bottom: 0.5em;
+}
+
+.Album-Art {
+  display: table-cell;
+  padding-right: 1em;
+  padding-left: 1em;
+  height: 96px !important;
+  width: 96px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.Album-Img {
+  height: 96px;
+  width: 96px;
+  position: absolute;
+  top: 0;
+  left: 1em;
+}
+
+.Spotify-Play-Wrapper {
+  height: 65.5px;
+  width: 65.5px;
+  left: calc(1em + 15px);
+  top: 16px;
+  position: absolute;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.Spotify-Play {
+  position: absolute;
+  z-index: 2;
+  opacity: .2;
+}
+
+iframe {
+  position: absolute;
+  left: -7.5px;
+  top: -7.5px;
+}
+
+.Spotify-Play:hover{
+  opacity: .8;
+}
+
+.Track-Info {
+  display: table-cell;
+  vertical-align: top;
+  text-align: left;
+}
+
+.Info-Field {
+  color: #bbb;
+  display: inline-block;
+  min-width: 50px;
+}
+
+.Info-Value {
+  display: table-cell;
+  text-align: left;
+}

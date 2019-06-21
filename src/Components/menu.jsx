@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import User from './user';
+import MenuItem from './menu_item';
 
 class Menu extends Component {
     state = {  }
@@ -13,6 +14,11 @@ class Menu extends Component {
             }}>
             <User />
             
+            <ul>
+                <MenuItem text="Challenges" active={true} />
+                <MenuItem text="Leaderboards" active={false} />
+                <MenuItem text="History" active={false} />
+            </ul>
         </div>);
     }
 }
