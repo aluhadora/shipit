@@ -10,6 +10,7 @@ class Track extends Component {
   }
 
   dateline(attr, date) {
+    if(!attr && !date) return null;
     if (this.nowPlaying(attr, date)) return 'Now playing';
 
     var d = new Date(0);
@@ -45,13 +46,19 @@ class Track extends Component {
         <div className="Track-Info">
           <div className="Info-line">
             <span className="Info-Field">Track:</span> {track.name}
-          </div>
-          <div className="Info-line">
+          </div>{ track.artist &&
+            ( <div className="Info-line">
             <span className="Info-Field">Artist:</span> {track.artist}
-          </div>
+          </div>)
+          }
+          {track.album && 
           <div className="Info-line">
             <span className="Info-Field">Album:</span> {track.album}
-          </div>
+          </div>}
+          {track.info && 
+          <div className="Info-line">
+            <span className="Info-Field"></span> {track.info}
+          </div>}
           <div className="Info-line" style={{paddingTop: '6px'}}>
             <span className="Info-Field">{this.dateline.bind(this)(track.attr, track.date)}</span>
           </div>

@@ -4,6 +4,7 @@ import './App.css';
 import Menu from './Components/menu';
 import ActivityBar from './Components/activity_bar';
 import LeaderBoard from './Components/leaderboard';
+import Leaderboards from './Components/Leaderboards/leaderboards';
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
 
       <Menu />
       <ActivityBar />
-      <LeaderBoard />
+      <Leaderboards />
     </div>
   );
 }
