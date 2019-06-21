@@ -60,7 +60,7 @@ class Track extends Component {
             <span className="Info-Field"></span> {track.info}
           </div>}
           {track.link && <div className="Info-line">
-            <span className="Info-Field"></span> <a onClick={track.onClick}>{track.link.text}</a>
+            <span className="Info-Field"></span> <a style={{color: "blue"}} onClick={track.link.onClick}>{track.link.text}</a>
           </div>}
           <div className="Info-line" style={{paddingTop: '6px'}}>
             <span className="Info-Field">{this.dateline.bind(this)(track.attr, track.date)}</span>
