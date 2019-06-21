@@ -1,17 +1,14 @@
-var $ = require('jquery');
+// export function mostRepeatedTracks(callback) {
+//     var url = "https://shipitback20190620080140.azurewebsites.net/api/values";
 
+//     $.ajax({
+//         method: 'Get',
+//         url: url,
+//     }).done(data => {
 
-export function mostRepeatedTracks(callback) {
-    var url = "https://shipitback20190620080140.azurewebsites.net/api/values";
-
-    $.ajax({
-        method: 'Get',
-        url: url,
-    }).done(data => {
-
-        callback(data)
-    });
-}
+//         callback(data)
+//     });
+// }
 
 export function pullTracks (callback, user) {
     if (!user) {
@@ -22,20 +19,20 @@ export function pullTracks (callback, user) {
     var url = 'https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks' +
      '&user=' + user + '&api_key=' + '888f48f85285e39075b7e1a461863d81' + '&format=json&limit=25';
   
-     $.ajax({
-       method: 'Get',
-       url: url,
-     }).done(data => {
-       if (!data.recenttracks) return callback(data);
-       for (var i = 0; i < data.recenttracks.track.length; i++) {
-         var track = data.recenttracks.track[i];
-         track.img = imgLinkFromTrack(track);
-         track.album = track.album['#text'];
-         track.artist = track.artist['#text'];
-       }
-  
-       callback(data);
-     });
+
+    fetch(url)
+        .then(res => res.json())
+        .then(data => {
+            if (!data.recenttracks) return callback(data);
+            for (var i = 0; i < data.recenttracks.track.length; i++) {
+                var track = data.recenttracks.track[i];
+                track.img = imgLinkFromTrack(track);
+                track.album = track.album['#text'];
+                track.artist = track.artist['#text'];
+            }
+        
+            callback(data);
+        });
   }
   
   function imgLink(track) {

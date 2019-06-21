@@ -6,14 +6,16 @@ class LeaderBoard extends Component {
     state = { tracks: [] }
 
     componentDidMount() {
-        Actions.mostRepeatedTracks(obj => {
-            this.setState(function () {
-              return {
-                tracks: obj.error ? obj : obj
-              };
-            });
-            this.forceUpdate();
-          }, 'aluhadora');
+        fetch("https://shipitback20190620080140.azurewebsites.net/api/values")
+            .then(res => res.json())
+            .then(obj => {
+                this.setState(function () {
+                return {
+                    tracks: obj.error ? obj : obj
+                };
+                });
+                this.forceUpdate();
+            }, 'aluhadora');
     }
 
     render() { 
