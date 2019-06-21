@@ -2,10 +2,13 @@ import React, { Component } from 'react';
 import User from './user';
 import MenuItem from './menu_item';
 
+
 class Menu extends Component {
     state = {  }
     render() { 
-        return (<div style={{position: "fixed",
+        return (
+        <div>
+        <div style={{position: "fixed",
             top: 0,
             bottom: 0,
             width: 300,
@@ -15,11 +18,20 @@ class Menu extends Component {
             <User />
             
             <ul>
-                <MenuItem text="Challenges" active={true} />
+                <MenuItem text="Challenges" active={false} />
                 <MenuItem text="Leaderboards" active={false} />
                 <MenuItem text="History" active={false} />
             </ul>
-        </div>);
+        </div>
+        <div>
+        <header>
+          <img src='primary-logo.svg'  alt="logo" />
+          <h1  style={{"marginTop": 5}}>listen.</h1>
+        </header>
+        </div>
+        </div>
+        
+        );
     }
 }
  

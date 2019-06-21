@@ -10,7 +10,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,6 +19,68 @@
   color: white;
 }
 
+.App {
+  text-align: center;
+}
+
+.pl_header {
+  color: #033B5C;
+  display: inline;
+  width: 25%;
+  font-size: 2em;
+  letter-spacing: -2px;
+  font-weight: 100;
+  height: 45px;
+  width:45px;
+
+}
+
+.App-header {
+  height: 65px;
+  padding: 20px;
+  color: inherit;
+}
+
+a, a:hover {
+  color: #033B5C;
+  text-decoration: none;
+}
+
+li {
+	display: inline-block;
+	position: relative;
+	padding-bottom: 3px;
+  margin-right: 40px;
+  color: #033B5C;
+}
+
+li:last-child {
+  width: 50px;
+  margin-right: 20px;
+}
+
+li:after {
+	content: '';
+	display: block;
+	height: 3px;
+	width: 0px;
+	background: transparent;
+	transition: width .5s ease, background-color .5s ease, margin-right .5s ease;
+}
+
+li:hover:after {
+	width: 100%;
+	background: lightgray;
+  margin-right: 70px;
+}
+
+.floatright {
+  float: right;
+}
+
+.floatleft {
+  float: left;
+}
 .App-link {
   color: #61dafb;
 }
