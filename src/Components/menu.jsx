@@ -24,7 +24,7 @@ class Menu extends Component {
             </ul>
         </div>
         <div>
-        <header>
+        <header style={{marginTop: 0}}>
           <h1  class='header_box'>listen.</h1>
         </header>
         </div>
