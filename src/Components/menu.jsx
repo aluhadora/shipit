@@ -25,8 +25,7 @@ class Menu extends Component {
         </div>
         <div>
         <header>
-          <img src='primary-logo.svg'  alt="logo" />
-          <h1  style={{"marginTop": 5}}>listen.</h1>
+          <h1  class='header_box'>listen.</h1>
         </header>
         </div>
         </div>
