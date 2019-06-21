@@ -25,7 +25,7 @@ class Menu extends Component {
         </div>
         <div>
         <header style={{marginTop: 0}}>
-          <h1  class='header_box'>listen.</h1>
+          <h1 style={{marginTop: 0}} class='header_box'>listen.</h1>
         </header>
         </div>
         </div>
