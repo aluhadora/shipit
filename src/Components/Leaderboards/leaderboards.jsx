@@ -2,36 +2,24 @@ import React, { Component } from 'react';
 import Track from '../track';
 import PopularSongs from './popular_songs';
 import RepeatedSongs from './repeated_songs';
+import * as Actions from '../../Actions/api_actions'
 
-//https://shipitback20190620080140.azurewebsites.net/api/mostpopularsong
 class Leaderboards extends Component {
-    state = { popularSong: {}, repeatedSong: {}, page: null }
+    state = { popularSong: {}, repeatedSong: {}, page: null, user: null }
 
     componentDidMount() {
-        fetch("https://shipitback20190620080140.azurewebsites.net/api/mostpopularsong")
-            .then(res => res.json())
+        Actions.ApiPromise(Actions.MostPopularSong)
             .then(obj => {
-                this.setState(function () {
-                return {
+                this.setState({
                     popularSong: obj[0]
-                };
                 });
-                this.forceUpdate();
-            }, 'aluhadora');
-
-
-
-
-        fetch("https://shipitback20190620080140.azurewebsites.net/api/values")
-            .then(res => res.json())
-            .then(obj => {
-                this.setState(function () {
-                return {
+            });
+        
+        Actions.ApiPromise(Actions.MostRepeatedTracks)
+            .then(obj => 
+                this.setState({
                     repeatedSong: obj[0]
-                };
-                });
-                this.forceUpdate();
-            }, 'aluhadora');
+                }));
     }
 
     pageToPopular()

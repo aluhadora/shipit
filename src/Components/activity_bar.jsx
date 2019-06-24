@@ -6,15 +6,20 @@ import * as Actions from '../Actions.js';
 class ActivityBar extends Component {
     state = { tracks: [] }
 
-    componentDidMount() {
-        Actions.pullTracks(obj => {
-            this.setState(function () {
-              return {
-                tracks: obj.error ? obj : obj.recenttracks.track
-              };
-            });
-            this.forceUpdate();
-          }, 'aluhadora');
+    componentDidUpdate(prevProps, prevState) {
+      const { user } = this.props;
+      if (this.state.tracks.length) return;
+      console.log("test");
+      
+
+      Actions.pullTracks(obj => {
+          this.setState(function () {
+            return {
+              tracks: obj.error ? obj : obj.recenttracks.track
+            };
+          });
+          this.forceUpdate();
+        }, user && user.username);  
     }
 
 

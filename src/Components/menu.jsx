@@ -5,7 +5,10 @@ import MenuItem from './menu_item';
 
 class Menu extends Component {
     state = {  }
+
     render() { 
+        const { user } = this.props;
+
         return (
         <div>
         <div style={{position: "fixed",
@@ -15,7 +18,7 @@ class Menu extends Component {
             left: 0,
             backgroundColor: "#EFF1F5"
             }}>
-            <User />
+            <User user={user} />
             
             <ul>
                 <MenuItem text="Challenges" active={false} />
@@ -24,9 +27,9 @@ class Menu extends Component {
             </ul>
         </div>
         <div>
-        <header style={{marginTop: 0}}>
-          <h1 style={{marginTop: 0}} class='header_box'>listen.</h1>
-        </header>
+            <header style={{marginTop: 0}}>
+            <h1 style={{marginTop: 0}} className='header_box'>listen.</h1>
+            </header>
         </div>
         </div>
         
